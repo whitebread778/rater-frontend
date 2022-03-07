@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom'
 
 const programs = () => {
     const [allPrograms, setAllPrograms] = useState([]);
@@ -24,6 +25,7 @@ const programs = () => {
     const programs = searchedPrograms?
         searchedPrograms.map(program => (
             <div key={program.id} className="program-block">
+                <Link to={`/program/${program.id}`}>Click me</Link>
                 {program.id}
                 {program.programName}
                 {program.programDesc}
@@ -31,6 +33,7 @@ const programs = () => {
         )) :
         allPrograms.map(program => (
             <div key={program.id} className="program-block">
+                <Link to={`/programs/${program.id}`}>Click me</Link>
                 {program.id}
                 {program.programName}
                 {program.programDesc}
