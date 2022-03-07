@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Program from "../components/program";
 
 const programs = () => {
     const [allPrograms, setAllPrograms] = useState([]);
@@ -24,14 +23,14 @@ const programs = () => {
 
     const programs = searchedPrograms?
         searchedPrograms.map(program => (
-            <div>
+            <div key={program.id} className="program-block">
                 {program.id}
                 {program.programName}
                 {program.programDesc}
             </div>
         )) :
         allPrograms.map(program => (
-            <div>
+            <div key={program.id} className="program-block">
                 {program.id}
                 {program.programName}
                 {program.programDesc}
