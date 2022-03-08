@@ -4,7 +4,10 @@ const htmlPlugin = new HtmlWebPackPlugin({
     filename: "./index.html"
 });
 module.exports = {
-mode: "development",
+    mode: "development",
+    output: {
+        publicPath: '/'
+    },
     module: {
         rules: [{
     test: /\.js$/,
