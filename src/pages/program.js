@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import SideNav from './SideNav';
+import SideNav from "../components/SideNav";
 
 
 const program = (props) => {
