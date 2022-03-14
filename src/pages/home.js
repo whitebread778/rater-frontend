@@ -4,7 +4,7 @@ import SideNav from '../components/SideNav';
 import SearchBar from '../components/search';
 //import { Route, Routes } from 'react-router-dom';
 import Announcer from '../components/announcer';
-import '../styles/App.css'
+import "../styles/home.css"
 
 
 const home = () => {

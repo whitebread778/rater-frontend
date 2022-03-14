@@ -5,7 +5,7 @@ const SideNav = (props) => {
         <div className='sidenav'>
             <a><img src='bcit.svg'/></a>
             <a href ="/"> Home</a>
-            <a href ="/porgrams">Programs</a>
+            <a href ="/programs">Programs</a>
             <a href ="#section"> Write Reviews</a>
             <a href ="#section"> About</a>
             <a href ="#section"> {props.name}</a>
