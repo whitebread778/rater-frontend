@@ -1,9 +1,10 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import Program from "./program";
+import {Link} from 'react-router-dom'
 
 const programs = () => {
-    const [programs, setPrograms] = useState([]);
+    const [allPrograms, setAllPrograms] = useState([]);
+    const [searchedPrograms, setSearchedPrograms] = useState(null);
 
     useEffect(() => {
         async function getPrograms() {
@@ -16,34 +17,60 @@ const programs = () => {
             });
             const data = await resp.json();
             console.log(data);
-            setPrograms(data)
+            setAllPrograms(data)
         }
         getPrograms();
     }, [])
 
-    // async function getPrograms() {
-    //     const resp = await fetch('api/SchoolPrograms', {
-    //         method: "GET",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             "accept": "application/json"
-    //         }
-    //     });
-    //     console.log(resp);
-    //     const data = await resp.json();
-    //     console.log(data);
-    //     this.setState({programs: data, loading: false});
-    // }
+    const programs = searchedPrograms?
+        searchedPrograms.map(program => (
+            <div key={program.id} className="program-block">
+                <Link to={`/program/${program.id}`}>Click me</Link>
+                {program.id}
+                {program.programName}
+                {program.programDesc}
+            </div>
+        )) :
+        allPrograms.map(program => (
+            <div key={program.id} className="program-block">
+                <Link to={`/programs/${program.id}`}>Click me</Link>
+                {program.id}
+                {program.programName}
+                {program.programDesc}
+            </div>
+        ))
+
+    const searchPrograms = (input) => {
+        console.log(input);
+        const result = allPrograms.filter(program => program.programName.toLowerCase().includes(input));
+        setSearchedPrograms(result);
+    }
+
+    const searchBar = (
+        <div className="search-program-bar">
+            <input
+                onChange={(e) => searchPrograms(e.target.value)}
+                placeholder="Enter program name"
+                className="search-program-input"
+            />
+        </div>
+    )
+
+
 
     return (
-        <div>
-            {
-                programs.map(program => {
-                    return <Program
-                                key={program.id}
-                                program={program}/>
-                })
-            }
+        <div className="programs-page-wrapper">
+            {searchBar}
+            <div className="programs-wrapper">
+                {programs}
+                {/* {
+                    allPrograms.map(program => {
+                        return <Program
+                                    key={program.id}
+                                    program={program}/>
+                    })
+                } */}
+            </div>
         </div>
     )
 }

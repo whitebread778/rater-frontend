@@ -4,7 +4,8 @@ const SideNav = (props) => {
     return (
         <div className='sidenav'>
             <a><img src='bcit.svg'/></a>
-            <a href ="#section"> Home</a>
+            <a href ="/"> Home</a>
+            <a href ="/porgrams">Programs</a>
             <a href ="#section"> Write Reviews</a>
             <a href ="#section"> About</a>
             <a href ="#section"> {props.name}</a>

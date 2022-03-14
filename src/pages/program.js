@@ -1,19 +1,40 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import SideNav from "../components/SideNav";
+import { useParams } from "react-router-dom";
 
+const program = () => {
+    const {id} = useParams()
+    const [selectedProgram, setSelectedProgram] = useState(null);
 
-const program = (props) => {
-    const program = props.program;
+    useEffect(() => {
+        async function getSelectedProgram() {
+            const resp = await fetch(`https://e801-50-64-177-16.ngrok.io/api/schoolPrograms/${id}`, {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    "accept": "application/json"    
+                }
+            });
 
-    return (
-        <div className="program-section">
-            <SideNav/>
-            <div>ID: {program.id}</div>
-            <div>Name: {program.programName}</div>
-            <div>Description: {program.programDesc}</div>
-        </div>
-    )
+            const data = await resp.json();
+            setSelectedProgram(data)
+        }
+        getSelectedProgram();
+    }, [])
+    if (selectedProgram) {
+        return (
+            <div className="selected-program-section">
+                <div>{selectedProgram.id}</div>
+                <div>{selectedProgram.programName}</div>
+                <div>{selectedProgram.programDesc}</div>
+            </div>
+        )
+    } else {
+        return (
+            <div>fetching data...</div>
+        )
+    }
+    
 }
 
 export default program;
