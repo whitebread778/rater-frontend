@@ -9,7 +9,7 @@ const programs = () => {
 
     useEffect(() => {
         async function getPrograms() {
-            const resp = await fetch('https://e801-50-64-177-16.ngrok.io/api/schoolPrograms', {
+            const resp = await fetch('https://bc0a-2001-569-7566-a500-586c-ac27-1787-aeac.ngrok.io/api/schoolprograms', {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
