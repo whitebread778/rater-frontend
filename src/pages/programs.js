@@ -1,7 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
-import '../styles/programs.css'
+import '../styles/programs.css';
+import baseUrl from "../data/baseApi";
 
 const programs = () => {
     const [allPrograms, setAllPrograms] = useState([]);
@@ -9,7 +10,7 @@ const programs = () => {
 
     useEffect(() => {
         async function getPrograms() {
-            const resp = await fetch('https://bc0a-2001-569-7566-a500-586c-ac27-1787-aeac.ngrok.io/api/schoolprograms', {
+            const resp = await fetch(`${baseUrl}api/SchoolPrograms`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -25,17 +26,17 @@ const programs = () => {
 
     const programs = searchedPrograms?
         searchedPrograms.map(program => (
-            <div key={program.id} className="program-block">
-                <Link to={`/program/${program.id}`}>Click me</Link>
-                {program.id}
+            <div key={program.SchoolProgramId} className="program-block">
+                <Link to={`/programs/${program.SchoolProgramId}`}>Click me</Link>
+                {/* {program.id} */}
                 {program.programName}
                 {program.programDesc}
             </div>
         )) :
         allPrograms.map(program => (
-            <div key={program.id} className="program-block">
-                <Link to={`/programs/${program.id}`}>Click me</Link>
-                {program.id}
+            <div key={program.SchoolProgramId} className="program-block">
+                <Link to={`/programs/${program.SchoolProgramId}`}>Click me</Link>
+                {/* {program.id} */}
                 {program.programName}
                 {program.programDesc}
             </div>
