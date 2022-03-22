@@ -2,18 +2,25 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import "../styles/program.css";
-import baseUrl from '../data/baseApi';
+
+import WriteReviews from "./writeReviews";
+import baseUrl from "../data/baseApi";
+
+
 const program = () => {
     const {schoolProgramId} = useParams()
     const [selectedProgram, setSelectedProgram] = useState(null);
+    console.log(schoolProgramId);
 
     useEffect(() => {
         async function getSelectedProgram() {
-            const resp = await fetch(`${baseUrl}api/schoolprograms/${schoolProgramId}`, {
+
+            const resp = await fetch(`${baseUrl}api/SchoolPrograms/${schoolProgramId}`, {
+
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
-                    "accept": "application/json"    
+                    "accept": "application/json"
                 }
             });
 
@@ -28,6 +35,9 @@ const program = () => {
                 <div>{selectedProgram.schoolProgramId}</div>
                 <div>{selectedProgram.programName}</div>
                 <div>{selectedProgram.programDesc}</div>
+                <WriteReviews 
+                    selectedProgram={selectedProgram}
+                />
             </div>
         )
     } else {
