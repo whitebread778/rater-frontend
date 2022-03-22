@@ -2,15 +2,20 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import "../styles/writeReviews.css";
 import baseUrl from "../data/baseApi";
+import { useParams } from 'react-router-dom';
 
 const writeReviews = (props) => {
-    const selectedProgram = props.selectedProgram;
+    // const selectedProgram = props.selectedProgram;
+    const {schoolProgramId} = useParams();
     const [score, setScore] = useState(0);
     const [review, setReview] = useState("");
     const [message, setMessage] = useState("");
 
     let handleSubmit = async (e) => {
         e.preventDefault();
+        // console.log({SchoolProgramId: schoolProgramId,
+        //     RateNumber: Number(score),
+        //     ProgramReview: review,})
         try {
             let res = await fetch(`${baseUrl}api/programrates`, {
                 method: "POST",
@@ -18,13 +23,14 @@ const writeReviews = (props) => {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    SchoolProgramId: selectedProgram.SchoolProgramId,
+                    SchoolProgramId: schoolProgramId,
                     RateNumber: Number(score),
                     ProgramReview: review,
                 }),
             });
             
             let resJson = await res.json();
+            console.log(resJson);
             if (res.status === 200) {
                 setScore(0);
                 setReview("");

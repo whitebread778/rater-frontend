@@ -27,7 +27,7 @@ const programs = () => {
     const programs = searchedPrograms?
         searchedPrograms.map(program => (
             <div key={program.SchoolProgramId} className="program-block">
-                <Link to={`/programs/${program.SchoolProgramId}`}>Click me</Link>
+                <Link to={`/programs/${program.schoolProgramId}`}>Click me</Link>
                 {/* {program.id} */}
                 {program.programName}
                 {program.programDesc}
@@ -35,7 +35,7 @@ const programs = () => {
         )) :
         allPrograms.map(program => (
             <div key={program.SchoolProgramId} className="program-block">
-                <Link to={`/programs/${program.SchoolProgramId}`}>Click me</Link>
+                <Link to={`/programs/${program.schoolProgramId}`}>Click me</Link>
                 {/* {program.id} */}
                 {program.programName}
                 {program.programDesc}
