@@ -2,14 +2,14 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import "../styles/program.css";
-
+import baseUrl from '../data/baseApi';
 const program = () => {
-    const {id} = useParams()
+    const {schoolProgramId} = useParams()
     const [selectedProgram, setSelectedProgram] = useState(null);
 
     useEffect(() => {
         async function getSelectedProgram() {
-            const resp = await fetch(`https://e801-50-64-177-16.ngrok.io/api/schoolPrograms/${id}`, {
+            const resp = await fetch(`${baseUrl}api/schoolprograms/${schoolProgramId}`, {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -25,7 +25,7 @@ const program = () => {
     if (selectedProgram) {
         return (
             <div className="selected-program-section">
-                <div>{selectedProgram.id}</div>
+                <div>{selectedProgram.schoolProgramId}</div>
                 <div>{selectedProgram.programName}</div>
                 <div>{selectedProgram.programDesc}</div>
             </div>

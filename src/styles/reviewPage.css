@@ -1,0 +1,15 @@
+.review-page{
+    width:60%;
+    height: auto;
+    margin: auto;
+    margin-top: 10%;
+    font-size: larger;
+}
+
+.reviewCard{
+    background-color: antiquewhite;
+    display: flex;
+    gap:3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}

@@ -1,9 +1,10 @@
 import React from 'react';
 
+
 const SideNav = (props) => {
     return (
         <div className='sidenav'>
-            <a><img src='bcit.svg'/></a>
+            <a><img src='./bcit.svg'/></a>
             <a href ="/"> Home</a>
             <a href ="/programs">Programs</a>
             <a href ="#section"> Write Reviews</a>
