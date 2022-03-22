@@ -52,7 +52,10 @@
 }
 
 body{
-  /* background-image:url('/public/background.png' ); */
+  /* background-image:url('/public/background.png' );
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
 }
 
 /* searchPage */

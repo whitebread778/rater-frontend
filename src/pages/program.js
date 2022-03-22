@@ -2,8 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import "../styles/program.css";
+
 import WriteReviews from "./writeReviews";
 import baseUrl from "../data/baseApi";
+
 
 const program = () => {
     const {schoolProgramId} = useParams()
@@ -12,7 +14,9 @@ const program = () => {
 
     useEffect(() => {
         async function getSelectedProgram() {
+
             const resp = await fetch(`${baseUrl}api/SchoolPrograms/${schoolProgramId}`, {
+
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
