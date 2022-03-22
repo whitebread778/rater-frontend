@@ -41,7 +41,7 @@ const programs = () => {
         )) :
         allPrograms.map(program => (
 
-            <div key={program.id} className="program-block">
+            <div key={program.schoolProgramId} className="program-block">
                 <Link to={`/programs/${program.schoolProgramId}`}>Click me</Link>
                 {program.schoolProgramId}
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import "../styles/program.css";
@@ -35,9 +36,12 @@ const program = () => {
                 <div>{selectedProgram.schoolProgramId}</div>
                 <div>{selectedProgram.programName}</div>
                 <div>{selectedProgram.programDesc}</div>
-                <WriteReviews 
+                {/* <WriteReviews 
                     selectedProgram={selectedProgram}
-                />
+                /> */}
+                <div key={selectedProgram.schoolProgramId} className="write-review-btn">
+                    <Link to={`/programs/${selectedProgram.schoolProgramId}/writeReviews`}>Write reviews</Link>
+                </div>
             </div>
         )
     } else {
