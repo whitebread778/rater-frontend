@@ -41,7 +41,8 @@ const program = () => {
                 /> */}
 
                 <div key={selectedProgram.schoolProgramId} className="write-review-btn">
-                    <Link to={`/programs/${selectedProgram.schoolProgramId}/writeReviews`}>Write reviews</Link>
+                    <Link to={`/programs/${selectedProgram.schoolProgramId}/writeReviews`}>Write reviews</Link> <br/>
+                    <Link to={`/programs/${selectedProgram.schoolProgramId}/reviews`}>Check reviews</Link>
                 </div>
 
             </div>

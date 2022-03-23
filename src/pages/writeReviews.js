@@ -58,7 +58,7 @@ const writeReviews = (props) => {
                     type="text"
                     value={review}
                     onChange={(e) => setReview(e.target.value)}
-                />
+                />  
                 <button type="submit">Submit</button>
             </form>
         </div>
