@@ -39,9 +39,11 @@ const program = () => {
                 {/* <WriteReviews 
                     selectedProgram={selectedProgram}
                 /> */}
+
                 <div key={selectedProgram.schoolProgramId} className="write-review-btn">
                     <Link to={`/programs/${selectedProgram.schoolProgramId}/writeReviews`}>Write reviews</Link>
                 </div>
+
             </div>
         )
     } else {

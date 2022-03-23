@@ -32,21 +32,24 @@ const programs = () => {
         searchedPrograms.map(program => (
 
             <div key={program.schoolProgramId} className="program-block">
-                <Link to={`/program/${program.schoolProgramId}`}>Click me</Link>
-                {program.schoolProgramId}
+                {/* <Link to={`/program/${program.schoolProgramId}`}>Click me</Link> */}
+                {/* {program.schoolProgramId} */}
 
                 {program.programName}
-                {program.programDesc}
+                {/* {program.programDesc} */}
+                <Link to={`/program/${program.schoolProgramId}`}>Click me</Link>
             </div>
         )) :
         allPrograms.map(program => (
+
 
             <div key={program.schoolProgramId} className="program-block">
                 <Link to={`/programs/${program.schoolProgramId}`}>Click me</Link>
                 {program.schoolProgramId}
 
                 {program.programName}
-                {program.programDesc}
+                {/* {program.programDesc} */}
+                <Link to={`/programs/${program.schoolProgramId}`}>Click me</Link>
             </div>
         ))
 
@@ -70,8 +73,10 @@ const programs = () => {
 
     return (
         <div className="programs-page-wrapper">
-            {searchBar}
+            <h1>Search Programs Here:</h1>
+            {/* {searchBar} */}
             <div className="programs-wrapper">
+             {searchBar}
                 {programs}
                 {/* {
                     allPrograms.map(program => {
