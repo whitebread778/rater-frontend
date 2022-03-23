@@ -5,7 +5,6 @@ import baseUrl from "../data/baseApi";
 import { useParams } from 'react-router-dom';
 
 const writeReviews = (props) => {
-    // const selectedProgram = props.selectedProgram;
     const {schoolProgramId} = useParams();
     const [score, setScore] = useState(0);
     const [review, setReview] = useState("");
