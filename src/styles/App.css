@@ -55,7 +55,8 @@ body{
   /* background-image:url('/public/background.png' );
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center; */
+  background-position: center;  */
+  background-color: beige;
 }
 
 /* searchPage */

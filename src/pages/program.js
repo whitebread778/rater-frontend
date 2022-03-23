@@ -35,9 +35,10 @@ const program = () => {
                 <div>{selectedProgram.schoolProgramId}</div>
                 <div>{selectedProgram.programName}</div>
                 <div>{selectedProgram.programDesc}</div>
-                <WriteReviews 
+                {/* <WriteReviews 
                     selectedProgram={selectedProgram}
-                />
+                /> */}
+                                <Link to={`/programs/${program.schoolProgramId}`}>Click me</Link>
             </div>
         )
     } else {

@@ -15,8 +15,8 @@ const reviewCard = (props) => {
           {review.rateNumber}
         </p>
       </div>
-
-      <div className="programCard-mid">
+      <div class="programCard-mid"></div>
+      <div className="programCard-right">
         <p>
           <b>Review: </b>
           <br />

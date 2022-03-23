@@ -46,7 +46,7 @@ const reviewPage = () => {
         return (
             <>
                 <div className="selected-program-section">    
-                    <h1>This is the review for {selectedProgram.programName} program</h1>              
+                    <h1>This is the review for {selectedProgram.programName} program: </h1>              
                 </div>
                 <div className="review-page">
                     <div className='review-content-container'>
