@@ -42,9 +42,10 @@ const programs = () => {
         )) :
         allPrograms.map(program => (
 
-            <div key={program.id} className="program-block">
-                {/* <Link to={`/programs/${program.schoolProgramId}`}>Click me</Link> */}
-                {/* {program.schoolProgramId} */}
+
+            <div key={program.schoolProgramId} className="program-block">
+                <Link to={`/programs/${program.schoolProgramId}`}>Click me</Link>
+                {program.schoolProgramId}
 
                 {program.programName}
                 {/* {program.programDesc} */}
