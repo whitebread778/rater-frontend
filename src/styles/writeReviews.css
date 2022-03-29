@@ -2,3 +2,8 @@
     display: grid;
     margin-left: 200px;
 }
+
+textarea {
+    width: 800px;
+    height: 150px;
+  }
