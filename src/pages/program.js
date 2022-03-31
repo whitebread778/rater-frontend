@@ -3,10 +3,13 @@ import {Link} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import "../styles/program.css";
-
+import Container from 'react-bootstrap/Container';
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Card from 'react-bootstrap/Card';
 import WriteReviews from "./writeReviews";
 import baseUrl from "../data/baseApi";
-
+import logo from "../../public/logo.png";
 
 const program = () => {
     const {schoolProgramId} = useParams()
@@ -16,36 +19,49 @@ const program = () => {
     useEffect(() => {
         async function getSelectedProgram() {
 
-            const resp = await fetch(`${baseUrl}api/SchoolPrograms/${schoolProgramId}`, {
+            // const resp = await fetch(`${baseUrl}api/SchoolPrograms/${schoolProgramId}`, {
 
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "accept": "application/json"
-                }
-            });
+            //     method: "GET",
+            //     headers: {
+            //         "Content-Type": "application/json",
+            //         "accept": "application/json"
+            //     }
+            // });
 
-            const data = await resp.json();
-            setSelectedProgram(data)
+            // const data = await resp.json();
+            setSelectedProgram({
+                programName: 'Full-Stack Web Development',
+                programDesc: 'The Full-Stack Web Development Diploma (FSWD) features an interdisciplinary learning environment to prepare you for a career as a web developer. Focusing on emerging web application development tools and technologies, this unique two-year full-time program offers hands-on experience combined with industry projects to equip you for the many opportunities in this fast-growing and high-demand field.',
+                schoolProgramId: 1
+            })
         }
         getSelectedProgram();
     }, [])
     if (selectedProgram) {
         return (
-            <div className="selected-program-section">
-                <div>{selectedProgram.schoolProgramId}</div>
-                <div>{selectedProgram.programName}</div>
-                <div>{selectedProgram.programDesc}</div>
-                {/* <WriteReviews 
+            <Container className="p-3">
+                <Card className="selected-program-section col">
+                    <h1 className='text-center'>Program you selected</h1>
+                    <Row>
+                        <Col>
+                            <img src={logo} />
+                        </Col>
+                        <Col>
+                            <h3 className='text-center'>{selectedProgram.programName}</h3>
+                            <p className='text-center'>{selectedProgram.programDesc}</p>
+                        </Col>
+                    </Row>
+                    {/* <WriteReviews 
                     selectedProgram={selectedProgram}
                 /> */}
 
-                <div key={selectedProgram.schoolProgramId} className="write-review-btn">
-                    <Link to={`/programs/${selectedProgram.schoolProgramId}/writeReviews`}>Write reviews</Link> <br/>
-                    <Link to={`/programs/${selectedProgram.schoolProgramId}/reviews`}>Check reviews</Link>
-                </div>
+                    <Col key={selectedProgram.schoolProgramId} className="write-review-btn d-flex justify-content-around p-2">
+                        <Link to={`/programs/${selectedProgram.schoolProgramId}/writeReviews`} className='btn btn-primary'>Write reviews</Link> <br />
+                        <Link to={`/programs/${selectedProgram.schoolProgramId}/reviews`} className='btn btn-danger'>Check reviews</Link>
+                    </Col>
 
-            </div>
+                </Card>
+            </Container>
         )
     } else {
         return (
