@@ -61,7 +61,7 @@ const writeReviews = (props) => {
                 <Form onSubmit={handleSubmit}>
                     <Form.Group as={Row} className="mb-3" controlId="formHorizontalScore">
                         <Form.Label column sm={2}>
-                            Score
+                            Score (0-5)
                         </Form.Label>
                         <Col sm={8}>
                             <Form.Control value={score} min='0' max='5' type="text" onChange={(e) => setScore(e.target.value)} placeholder="Score" />
@@ -75,7 +75,7 @@ const writeReviews = (props) => {
                             <Form.Control value={review} type="text" as="textarea" onChange={(e) => setReview(e.target.value)} placeholder="Review" />
                         </Col>
                     </Form.Group>
-                    <Button variant="primary" type="submit">Submit</Button>
+                    <Button variant="primary" type="submit" className="submitBtn">Submit</Button>
                 </Form>
         </div>
         </Container>

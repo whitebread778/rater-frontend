@@ -8,18 +8,22 @@
 
 .reviewCard{
     background-color: ghostwhite;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 0fr 3fr;
     gap:3rem;
     margin-bottom: 3rem;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 10px;
-    height: 15rem; 
+    height: auto; 
+    padding:2rem;
+    
      
 }
 
 .programCard-left{
     margin-left: 2rem;
+    width: 10rem;
 }
 
 .programCard-mid {
