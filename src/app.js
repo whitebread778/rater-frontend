@@ -8,7 +8,7 @@ import Home from "./pages/home";
 import "./styles/App.css";
 import ReviewPage from "./pages/reviewPage";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import '../node_modules/antd/dist/antd.css';
 const App = () => {
     return (
         <>
