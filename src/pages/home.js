@@ -5,6 +5,7 @@ import SearchBar from "../components/search";
 //import { Route, Routes } from 'react-router-dom';
 import Announcer from "../components/announcer";
 import "../styles/home.css";
+import study from "../../public/study.png";
 
 const home = () => {
   return (
@@ -30,7 +31,7 @@ const home = () => {
         March, 2022 over 4 months.
       </p>
       </text>
-      <img src="../home.png" className="homeImage"></img>
+      <img src={study} className="studyImg"/>
  
 </span>
       <p>
@@ -55,9 +56,8 @@ const home = () => {
             gender or race.
           </li>
         </ul>
-    
       </p>
-     
+
     </div>
   );
 };

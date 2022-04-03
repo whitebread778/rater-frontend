@@ -1,9 +1,12 @@
 .write-reviews-wrapper {
     display: grid;
     margin-left: 200px;
+    margin-top:10rem;
+    gap:6rem;
 }
 
 textarea {
     width: 800px;
     height: 150px;
   }
+

@@ -1,13 +1,14 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
+import bcit from '../../public/bcit.svg'
 
 const SideNav = (props) => {
     return (
         <div className='sidenav'>
-            <a><img src='./bcit.svg'/></a>
+             <img src={bcit} className='logoImg' />
             <a href ="/"> Home</a>
-            <a href ="/programs">Programs</a>
-            <a href ="/writeReviews"> Write Reviews</a>
+            <a href ="/programs">Search</a>
+ 
             {/* <a href ="#section"> About</a>
             <a href ="#section"> {props.name}</a> */}
         </div>

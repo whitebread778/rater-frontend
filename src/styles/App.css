@@ -8,20 +8,26 @@
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 30px;
+    text-align: center;
   }
   
   .sidenav a {
-    padding: 8px 8px 8px 32px;
+    /* padding: 8px 8px 8px 32px; */
     text-decoration: none;
     font-size: 25px;
     color: #818181;
     display: block;
     transition: 0.3s;
     margin-bottom: 3rem;
+   
   }
 
-  .sidenav a img {
+  .logoImg{
     border-radius: 25px;
+    margin-bottom:3rem;
+    width:60%;
+    height:auto;
+   
   }
   
   .sidenav a:hover {
@@ -52,11 +58,10 @@
 }
 
 body{
-  /* background-image:url('/public/background.png' );
+  background-image:url("../../public/background.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;  */
-  background-color: beige;
+  background-position: center;  
 }
 
 /* searchPage */

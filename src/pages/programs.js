@@ -66,6 +66,7 @@ const programs = () => {
 
     return (
         <div className="programs-page-wrapper">
+            <h1> Search Programs Here: </h1>
             {searchBar}
             <div className="programs-wrapper">
                 {programs}

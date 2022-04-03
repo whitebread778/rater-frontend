@@ -12,12 +12,11 @@
     line-height:2fr;
   
 }
-.homeImage{
+.studyImg{
     width: 45%;
     max-height: fit-content;
     border-radius: 15px;
     
-
 }
 span{
     display:flex;
