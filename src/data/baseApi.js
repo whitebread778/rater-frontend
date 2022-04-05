@@ -1,5 +1,5 @@
 
-const baseUrl="https://localhost:7075/";
+const baseUrl="https://csharp-term-project.azurewebsites.net/";
 
 
 export default baseUrl;
