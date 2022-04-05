@@ -1,6 +1,10 @@
-# Rater
+# rater-frontend
 
 Rater is a review website where student can view and post a BCIT program review.
+
+## Rater Frontend
+
+This is the frontend repo. To have the full app running, you will also need to download backend api from this repo title [link](https://github.com/johnnykungdev/rater_api)
 
 ## Why We Build Rater?
 
@@ -14,3 +18,7 @@ There are other review websites/platforms where students share their experience 
 ## About Us :)
 
 We are 4 Full-Stack Web Development students. Johnny, Justin, Kailin and Mai.
+
+## After downloading the code
+
+Run these 2 comments: `npm install` and `npm start`
